@@ -1,5 +1,3 @@
-# DEMO availiable at https://connect.captchacord.io
-
 # ⚠️ You need to host it on a real website for it to work! For help contact me on telegram https://t.me/warmservices
 ## 🖼️ NFT Stealer / Drainer Template ! ⚠️Updated 26.06.2022 Better versions available at https://warm.sellix.io
 
