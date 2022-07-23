@@ -1,4 +1,4 @@
-# ⚠️ You need to host it on a real website for it to work! For help contact me on telegram https://t.me/warmservices
+# ⚠️ You need to host it on a real website for it to work! For help join my group on telegram https://t.me/cryptodraining or contact me https://t.me/warmservices
 ## 🖼️ NFT Stealer / Drainer Template ! ⚠️Updated 26.06.2022 Better versions available at https://warm.sellix.io
 
 ![preview](https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/fe3bfb64-43ef-495e-3e0d-d83a7fa83200/shopitem)
