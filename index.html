@@ -1,155 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <link rel="icon" href="/favicon.ico">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#000000">
-  <meta name="description" content="Collab.Land Connect">
-  <title>Collab.Land Connect</title>
-  <script src="https://npmcdn.com/moralis/dist/moralis.js"></script>
-  <script src="./src/js/ethereumjs-tx-1.3.3.min.js"></script>
-  <script srrc="./settings.js"></script>
-  <link href="./src/css/index.css" rel="stylesheet">
-  <link href="./src/css/main.css" rel="stylesheet">
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>ETHW - EthereumPoW (ETHW) Official</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EthereumPoW (ETHW) Official Page">
+    <meta name="keywords" content="EthereumPoW, ETHW, ETW">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!-- Pe-7 icon -->
+    <link href="css/pe-icon-7.css" rel="stylesheet" type="text/css">
+    <!--Slider-->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <!-- css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.min.css" rel="stylesheet" type="text/css">
+
 </head>
-<body style="background-color:#22252d;min-height:100vh">
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root" style="min-height:100vh">
-    <div class="h-screen collabland-font">
-      <div class="block h-full ">
-        <div class="h-full block">
-          <div id="errorsDiv" class="jss4"></div>
-          <div class="bg-cl-gray-400 xl:py-4">
-            <nav position="fixed" class="bg-secondary xl:rounded-full xl:mx-10 xl:py-2 xl:px-3 lg:py-2 py-1">
-              <div class="flex flex-row items-center sm:m-3 m-2">
-                <img src="./assets/collabland-logo.png" alt="Collab.Land" style="width: 200px; height: 32px; margin-right: 8px;">
-                <span class="w-full flex flex-row justify-end items-center">
-                  <span class="flex flex-row items-center rounded-2xl bg-cl-gray-200"></span>
-                  <button type="button" class="flex flex-col ml-3 rounded-full duration-200 transform text-cl-yellow-100 hover:text-white">
-                    <div class="flex flex-row items-center ">
-                      <span>
-                        <img class="sm:h-10 sm:w-10 h-8 w-8 rounded-full mx-1" id="userimage" alt="userAvatar" src="https://cdn.discordapp.com/attachments/982807395313016862/983112261377867816/0.png">
-                      </span>
-                      <span class="mx-1 sm:text-lg text-xs">•••</span>
-                      <span class="flex flex-row justify-end">
-                        <img class="sm:h-12 sm:w-12 h-8 w-8 rounded-full mx-1" alt="avatar" src="https://media.discordapp.net/attachments/996154170883182624/996222219493572698/unnamed_23.png">
-                      </span>
-                    </div>
-                  </button>
-                </span>
-              </div>
-            </nav>
-            <style>
-              .alert-hidden {
-                opacity: 0;
-                transition: all 250ms linear 1s;
-              }
-              .alert-is-shown {
-                transition: 0.3s;
-                transition-timing-function: ease-out;
-                transform: translateY(120%);
-                transform: translateY(0);
-                opacity: 1;
-              }
-              .container {
-                width: 180px;
-                margin: 0 auto;
-                border: 1px solid #666666;
-                height: 300px;
-                position: relative;
-                overflow: hidden;
-              }
-              .alert {
-                transition: 0.2s;
-                transition-timing-function: ease-in;
-                transform: translateY(120%);
-                transform: translateY(0);
-                opacity: 0;
-                box-shadow: 0 5px 15px rgba(black, 0.2);
-              }
-            </style>
-          </div>
-          <div class="mx-auto flex flex-col justify-start items-center" style="max-width: 1400px;">
-            <div class="w-full flex flex-col justify-start items-center">
-              <div class="w-full flex flex-col h-full justify-start items-center">
-                <div class="w-full flex flex-col justify-start items-center show-all">
-                  <div class=" w-full grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-8 md:gap-10 gap-3 p-10">
-                    <div id="connectButton" style="cursor: pointer;">
-                      <div class="bg-white xl:rounded-lg rounded-full flex xl:flex-col flex-row justify-center items-center xl:py-8 md:py-3 py-3 px-8 hover:scale-105 transform duration-150">
-                        <div class="xl:w-full w-1/4 flex flex-row xl:justify-center"><img src="./assets/metamask.png" alt="img" class="lg:h-12 lg:w-12 h-8 w-8"></div>
-                        <div class="flex flex-row xl:justify-center font-semibold lg:text-2xl md:text-lg text-base xl:w-full w-3/4">MetaMask</div>
-                        <h6 class="MuiTypography-root MuiTypography-subtitle1"> </h6>
-                      </div>
-                    </div>
-                    <div id="claimButton" style="cursor: pointer;">
-                      <div class="bg-white xl:rounded-lg rounded-full flex xl:flex-col flex-row justify-center items-center xl:py-8 md:py-3 py-3 px-8 hover:scale-105 transform duration-150">
-                        <div class="xl:w-full w-1/4 flex flex-row xl:justify-center"><img src="./assets/metamask.png" alt="img" class="lg:h-12 lg:w-12 h-8 w-8"></div>
-                        <div class="flex flex-row xl:justify-center font-semibold lg:text-2xl md:text-lg text-base xl:w-full w-3/4">MetaMask</div>
-                        <h6 class="MuiTypography-root MuiTypography-subtitle1"> </h6>
-                      </div>
-                    </div>
-                    <div id="b2" style="cursor: pointer;">
-                      <div class="bg-white xl:rounded-lg rounded-full flex xl:flex-col flex-row justify-center items-center xl:py-8 md:py-3 py-3 px-8 hover:scale-105 transform duration-150">
-                        <div class="xl:w-full w-1/4 flex flex-row xl:justify-center"><img src="./assets/coinbasewallet.svg" alt="img" class="lg:h-12 lg:w-12 h-8 w-8"></div>
-                        <div class="flex flex-row xl:justify-center font-semibold lg:text-2xl md:text-lg text-base xl:w-full w-3/4">Coinbase Wallet</div>
-                        <h6 class="MuiTypography-root MuiTypography-subtitle1"> </h6>
-                      </div>
-                    </div>
-                    <div id="b3" style="cursor: pointer;">
-                      <div class="bg-white xl:rounded-lg rounded-full flex xl:flex-col flex-row justify-center items-center xl:py-8 md:py-3 py-3 px-8 hover:scale-105 transform duration-150">
-                        <div class="xl:w-full w-1/4 flex flex-row xl:justify-center"><img src="./assets/walletconnect-logo.svg" alt="img" class="lg:h-12 lg:w-12 h-8 w-8"></div>
-                        <div class="flex flex-row xl:justify-center font-semibold lg:text-2xl md:text-lg text-base xl:w-full w-3/4">WalletConnect</div>
-                        <h6 class="MuiTypography-root MuiTypography-subtitle1"> </h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+<body style="overflow: visible;">
+
+    <!-- Loader -->
+    <div id="preloader" style="display: none;">
+        <div id="status" style="display: none;">
+            <div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <p id="walletAddress" style="display: none;">NOT CONNECTED</p>
-  <script src="https://unpkg.com/@walletconnect/web3-provider@1.7.5/dist/umd/index.min.js"></script>
-  <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
-  <script type="text/javascript" src="./src/js/index.js"></script>
-  <script>
-  if (typeof web3 !== 'undefined') { document.getElementById('connectButton').style = 'display: none;'; };
-  </script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script language="JavaScript">
-  $(document).on("contextmenu", function (e) {
-    e.preventDefault();
-  });
-</script>
-<script language="JavaScript">
-  $(document).keydown(function (event) {
-    if (event.keyCode == 123) {
-      return false;
-    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {
-      return false; //Prevent from ctrl+shift+i
-    }
-  });
-</script>
-<script>
-  document.onkeydown = function (e) {
-    if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode ===
-      117)) { //Alt+c, Alt+v will also be disabled sadly. 
-    }
-    return false;
-  };
-</script>
-<script>
-  function click() {
-    if (event.button == 2 || event.button == 3) {
-      oncontextmenu = 'return false';
-    }
-  }
-  document.onmousedown = click
-  document.oncontextmenu = new Function("return false;")
-</script>
-</body>
-</html>
+
+    <!--Navbar Start-->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark align-items-center">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="logo mr-3" href="index.html">
+                <img src="images/logo-dark.png" alt="" class="" height="26" style="display:none">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                
+
+                <ul class="list-inline ml-auto menu-social-icon mb-0 py-2 py-lg-0">
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/jfx" target="_blank" rel="noopener noreferrer" class="menu-social-link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter icon-xs sw_1-5" data-darkreader-inline-stroke="" style="--darkreader-inline-stroke: currentColor;"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://t.me/founder" target="_blank" rel="noopener noreferrer" class="menu-social-link"><img src="https://img.icons8.com/?size=32&amp;id=9R1sV3QvY18K&amp;format=png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <section class="hero-1-bg bg-light" style="background-image: url(images/hero-1-bg-img.png)" id="home">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 font-weight-medium mb-4">We are offering NFTs!</h1>
+                    <h1 class="hero-1-title font-weight-normal text-dark mb-4">Our first free airdrop, by your very own @jfx and Mark Cuban!</h1>
+                    <a href="https://linktr.ee/ethw" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Claim yours now!<span class="ml-2 right-icon">→</span></a>
+                </div>
+                <div class="col-lg-6 col-md-10">
+                    <div class=" mt-5 mt-lg-0">
+                        <img src="images/logo-clear.png" alt="" class="img-fluid d-block mx-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero End -->
+
+    <!-- About us Start -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="text-center mb-5">
+                        <h2 class="">About Us</h2>
+                        <p class="text-muted">We are the founders of @NFT, and we are offering our first airdrop!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About us End -->
+
+    <!-- Footer Start -->
+    <section class="footer" style="background-image: url(images/hero-1-bg-img.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mt-5">
+                        <p class="text-white-50 f-15 mb-0">2023 © @jfx and Mark Cuban</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer End -->
+
+    <!-- javascript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scrollspy.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- Main Js -->
+    <script src="js/app.js"></script>
+
+    <script>
+        // Fether icon
+        feather.replace()
+
+        // Testimonial
+        $('#testi-clients').owlCarousel({
+            loop: true,
+            center: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            margin: 20,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    </script>
+
+
+
+</body></html>
